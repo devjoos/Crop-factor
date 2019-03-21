@@ -33,6 +33,10 @@ cameraMakeArray.forEach(camera => {
 
 cameraMake.addEventListener('change', (e) => {
     let crop = 0
+    if (e) {
+        results.innerHTML = '';
+        length.value = ''
+    }
     if (e.target.value === 'Canon5DM2') {
         crop = 1;
     } else if (e.target.value === 'PanasonicGH5') {
