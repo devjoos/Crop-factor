@@ -1,9 +1,3 @@
-
-
-const cameraMakeArray = ['Canon5DM2', 'PanasonicGH5', 'SonyA7CropMode']
-const sonyModels = ['A7', 'A7II', 'A7III']
-const canonModels = ['5D', '5Dm2', '5Dm3']
-const panasonicModels = ['gh2', 'gh3', 'gh4', 'gh5']
 const cameras = {
     Canon5DM2: 1,
     PanasonicGH5: 2,
@@ -11,10 +5,7 @@ const cameras = {
   };
 
 const cameraMake = document.getElementById("cameraMakes")
-const length = document.getElementById("length") 
-const button = document.getElementById("calculate")
-const cameraSelect = document.querySelector('.cameraSelects')
-const dropdown = document.getElementsByTagName('option')
+const lengthInput = document.getElementById("length") 
 const yourCrop = document.querySelector("#yourCrop")
 const results = document.querySelector("#results")
 
@@ -26,7 +17,7 @@ for(camera in cameras){
 }
 
 
-cameraMakes.addEventListener('change', (event) => {
+cameraMakes.addEventListener('change', () => {
   yourCrop.textContent = 
     `The ${cameraMakes.options[cameraMakes.selectedIndex].textContent} has a ${cameraMakes.value}x factor`;
  if(results.textContent){
@@ -36,15 +27,21 @@ cameraMakes.addEventListener('change', (event) => {
 
 // By making this a function declaration, you can call it manually
 const displayResults = () => {
-  (!isNaN(length.value) && length.value) ? 
-  results.textContent = `A ${length.value}mm lens is equivalent to a ${length.value * cameraMakes.value}mm lens on the ${cameraMakes.options[cameraMakes.selectedIndex].textContent}`
+  (!isNaN(lengthInput.value) && lengthInput.value) ? 
+  results.textContent = `A ${lengthInput.value}mm lens is equivalent to a ${lengthInput.value * cameraMakes.value}mm lens on the ${cameraMakes.options[cameraMakes.selectedIndex].textContent}`
   : 
   results.textContent = '';}
 
-length.addEventListener('input', displayResults)
+lengthInput.addEventListener('input', displayResults)
 
 
 
+
+
+// const cameraMakeArray = ['Canon5DM2', 'PanasonicGH5', 'SonyA7CropMode']
+// const sonyModels = ['A7', 'A7II', 'A7III']
+// const canonModels = ['5D', '5Dm2', '5Dm3']
+// const panasonicModels = ['gh2', 'gh3', 'gh4', 'gh5']
 // let crop = 0  
 // cameraMakeArray.forEach(camera => {
 //     let opt = document.createElement('option');
