@@ -1,5 +1,5 @@
 const canon = {
-  "EOS 5D/5D Mark II/III/IV": 1,
+  'EOS 5D/5D Mark II/III/IV': 1,
   "EOS 5D Mark IV 4K filming": 1.74,
   'EOS 60D/70D/77D/80D': 1.6,
   'EOS 7D/7D Mark II': 1.6,
@@ -8,26 +8,66 @@ const canon = {
   'EOS M/M2/M3/M10/M5/M6/M100/M50': 1.6,
   'EOS R/RP': 1 
 }
-const nikon = {};
-const sony = {};
-const panasonic = {};
-const dji = {};
-const leica = {};
-const olympus = {};
-const fujifilm = {};
+const nikon = {
+  'D1/1X/1H': 1.5,
+  'D2H/2X/2HS/2XS': 1.5,
+  'D3/3X/3S':1,
+  'D4/4S': 1,
+  'D5': 1,
+  'D100': 1.5,
+  'D200': 1.5,
+  'D300/300S': 1.5,
+  'D700': 1,
+  'D750': 1,
+  'D800/800E' :1,
+  'D810/810A': 1,
+  'D850': 1,
+  'D500': 1.5,
+  'D70/70S': 1.5,
+  'D80': 1.5,
+  'D90': 1.5,
+  'D7000': 1.5,
+  'D7100': 1.5,
+  'D7200': 1.5,
+  'D7500': 1.5,
+  'D5000': 1.5,
+  'D5100': 1.5,
+  'D5200': 1.5,
+  'D5300': 1.5,
+  'D5500': 1.5,
+  'D5600': 1.5,
+  'D50': 1.5,
+  'D40/40X': 1.5,
+  'D60': 1.5,
+  'D3000': 1.5,
+  'D3100': 1.5,
+  'D3200': 1.5,
+  'D3300': 1.5,
+  'D3500': 1.5
+
+
+};
+// const sony = {
+
+// };
+// const panasonic = {};
+// const dji = {};
+// const leica = {};
+// const olympus = {};
+// const fujifilm = {};
 
 
 
 
 const cameraBrand = {
   canon,
-  sony,
-  nikon,
-  panasonic,
-  dji,
-  leica,
-  olympus,
-  fujifilm
+  // dji,
+  // fujifilm,
+  // leica,
+  nikon
+  // olympus,
+  // panasonic,
+  // sony
 }
 
 
@@ -68,20 +108,23 @@ for(camera in cameraBrand){
     }
   }
 
-cameraBrands.addEventListener('change', (e) => {
+cameraBrands.addEventListener('change', () => {
    clearResults()
   while (cameraModel.firstChild) {
     cameraModel.removeChild(cameraModel.firstChild);
   }
-  let models = cameraBrands.options[cameraBrands.selectedIndex].cam
-  for(camera in models){
+  let camObjects = cameraBrands.options[cameraBrands.selectedIndex].cam // grabbing the cameraBrand object value which is the object of camera modesl and crop factors
+  Object.keys(camObjects).sort().map((cam) => {
+  let models = {[cam]: camObjects[cam]} // sorts the camera model objects alphabetically
+for(camera in models){
     let opt2 = document.createElement('option');
     opt2.textContent = camera;
+    console.log
     opt2.value = models[camera]; // Get the value that goes with the key
     cameraModel.appendChild(opt2);
     crop()
   }
-})
+})})
 
 cameraModel.addEventListener('change', () => {
  crop()
@@ -92,9 +135,8 @@ cameraModel.addEventListener('change', () => {
 
 // By making this a function declaration, you can call it manually
 const displayResults = () => {
-  (!isNaN(lengthInput.value) && lengthInput.value) ? 
+  lengthInput.value ? 
   results.textContent = `A ${lengthInput.value}mm lens is equivalent to a ${Math.round(lengthInput.value * cameraModel.value)}mm lens on the ${cameraModel.options[cameraModel.selectedIndex].textContent}`
   : 
   results.textContent = '';}
-
 lengthInput.addEventListener('input', displayResults)
