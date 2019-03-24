@@ -33,8 +33,7 @@ const cameraBrand = {
 
 
 const cameraBrands = document.getElementById("cameraBrands")
-let cameraModel = document.getElementById("cameraModel")
-let blankInput = document.getElementById("blank")
+const cameraModel = document.getElementById("cameraModel")
 const lengthInput = document.getElementById("length") 
 const yourCrop = document.querySelector("#yourCrop")
 const results = document.querySelector("#results")
