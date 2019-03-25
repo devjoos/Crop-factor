@@ -7,7 +7,10 @@ const canon = {
   'EOS 1DS/1DS Mark II//III': 1,
   'EOS M/M2/M3/M10/M5/M6/M100/M50': 1.6,
   'EOS R/RP': 1 
-}
+
+  
+
+};
 const nikon = {
   'D1/1X/1H': 1.5,
   'D2H/2X/2HS/2XS': 1.5,
@@ -43,13 +46,17 @@ const nikon = {
   'D3100': 1.5,
   'D3200': 1.5,
   'D3300': 1.5,
-  'D3500': 1.5
-
+  'D3500': 1.5,
+  '1 J1/J2/J3/J4/J5': 2.7,
+  '1 V1/V2/V3': 2.7,
+  '1 S1': 2.7,
+  '1 AW1': 2.7,
+  'Z 7': 1,
+  'Z 6': 1
+};
+const sony = {
 
 };
-// const sony = {
-
-// };
 // const panasonic = {};
 // const dji = {};
 // const leica = {};
@@ -70,21 +77,14 @@ const cameraBrand = {
   // sony
 }
 
+const cameraBrands = document.getElementById("cameraBrands");
+const cameraModel = document.getElementById("cameraModel");
+const lengthInput = document.getElementById("length");
+const yourCrop = document.querySelector("#yourCrop");
+const results = document.querySelector("#results");
+let fullNameCap;
 
-
-const cameraBrands = document.getElementById("cameraBrands")
-const cameraModel = document.getElementById("cameraModel")
-const lengthInput = document.getElementById("length") 
-const yourCrop = document.querySelector("#yourCrop")
-const results = document.querySelector("#results")
-
-
-
-
-
-
-
-for(camera in cameraBrand){
+for (camera in cameraBrand){
   let opt = document.createElement('option');
   opt.textContent = camera;
   opt.cam =  cameraBrand[camera]; /* Using a custom atrribute instead of 
@@ -99,12 +99,15 @@ for(camera in cameraBrand){
     lengthInput.value = '';
    }
    
+   
+   
    const crop = () => {
+     fullNameCap = `${cameraBrands.options[cameraBrands.selectedIndex].textContent.charAt(0).toUpperCase()}${cameraBrands.options[cameraBrands.selectedIndex].textContent.substring(1)} ${cameraModel.options[cameraModel.selectedIndex].textContent}`
     if (cameraModel.value == 1) {
-      yourCrop.textContent = `The ${cameraModel.options[cameraModel.selectedIndex].textContent} has a full frame sensor, there is no crop`
+      yourCrop.textContent = `The ${fullNameCap} has a full frame sensor, there is no crop`
     } else {
     yourCrop.textContent = 
-      `The ${cameraModel.options[cameraModel.selectedIndex].textContent} has a ${cameraModel.value}x factor`;
+      `The ${fullNameCap} has a ${cameraModel.value}x factor`;
     }
   }
 
@@ -116,15 +119,14 @@ cameraBrands.addEventListener('change', () => {
   let camObjects = cameraBrands.options[cameraBrands.selectedIndex].cam // grabbing the cameraBrand object value which is the object of camera modesl and crop factors
   Object.keys(camObjects).sort().map((cam) => {
   let models = {[cam]: camObjects[cam]} // sorts the camera model objects alphabetically
-for(camera in models){
+for (camera in models){
     let opt2 = document.createElement('option');
     opt2.textContent = camera;
-    console.log
     opt2.value = models[camera]; // Get the value that goes with the key
     cameraModel.appendChild(opt2);
-    crop()
-  }
-})})
+    crop();
+  };
+})});
 
 cameraModel.addEventListener('change', () => {
  crop()
@@ -135,8 +137,9 @@ cameraModel.addEventListener('change', () => {
 
 // By making this a function declaration, you can call it manually
 const displayResults = () => {
-  lengthInput.value ? 
-  results.textContent = `A ${lengthInput.value}mm lens is equivalent to a ${Math.round(lengthInput.value * cameraModel.value)}mm lens on the ${cameraModel.options[cameraModel.selectedIndex].textContent}`
+  !(fullNameCap === "") && (lengthInput.value) ? 
+  results.textContent = `A ${lengthInput.value}mm lens is equivalent to a ${Math.round(lengthInput.value * cameraModel.value)}mm lens on the ${fullNameCap}`
   : 
-  results.textContent = '';}
-lengthInput.addEventListener('input', displayResults)
+  results.textContent = '';
+}
+lengthInput.addEventListener('input', displayResults);
