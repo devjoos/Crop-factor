@@ -1,32 +1,65 @@
 const canon = {
-  'EOS 5D/5D Mark II/III/IV': 1,
+  'EOS 5D': 1,
+  'EOS 5D Mark II': 1,
+  'EOS 5D Mark III': 1,
+  'EOS 5DMark IV': 1,
   "EOS 5D Mark IV 4K filming": 1.74,
-  'EOS 60D/70D/77D/80D': 1.6,
-  'EOS 7D/7D Mark II': 1.6,
-  'EOS 1D/1D Mark II/IIN/III/IV': 1.3,
-  'EOS 1DS/1DS Mark II//III': 1,
-  'EOS M/M2/M3/M10/M5/M6/M100/M50': 1.6,
-  'EOS R/RP': 1 
+  'EOS 60D': 1.6,
+  'EOS 70D': 1.6,
+  'EOS 77D': 1.6,
+  'EOS 80D': 1.6,
+  'EOS 7D': 1.6,
+  'EOS 7D Mark II': 1.6,
+  'EOS 1D': 1.3,
+  'EOS 1D Mark II': 1.3,
+  'EOS 1D Mark IIN': 1.3,
+  'EOS 1D Mark III': 1.3,
+  'EOS 1D Mark IV': 1.3,
+  'EOS 1DS': 1,
+  'EOS 1DS Mark II': 1,
+  'EOS 1DS Mark III': 1,
+  'EOS M': 1.6,
+  'EOS M2': 1.6,
+  'EOS M3': 1.6,
+  'EOS M10': 1.6,
+  'EOS M5': 1.6,
+  'EOS M6': 1.6,
+  'EOS M100': 1.6,
+  'EOS M50': 1.6,
+  'EOS R': 1,
+  'EOS RP': 1  
 
   
 
 };
 const nikon = {
-  'D1/1X/1H': 1.5,
-  'D2H/2X/2HS/2XS': 1.5,
-  'D3/3X/3S':1,
-  'D4/4S': 1,
+  'D1': 1.5,
+  'D1X': 1.5,
+  'D1H': 1.5,
+  'D2H': 1.5,
+  'D2X': 1.5,
+  'D2HS': 1.5,
+  'D2XS': 1.5,
+  'D3':1,
+  'D3X':1,
+  'D3S':1,
+  'D4': 1,
+  'D4S': 1,
   'D5': 1,
   'D100': 1.5,
   'D200': 1.5,
-  'D300/300S': 1.5,
+  'D300': 1.5,
+  'D300S': 1.5,
   'D700': 1,
   'D750': 1,
-  'D800/800E' :1,
-  'D810/810A': 1,
+  'D800' :1,
+  'D800E' :1,
+  'D810': 1,
+  'D810A': 1,
   'D850': 1,
   'D500': 1.5,
-  'D70/70S': 1.5,
+  'D70': 1.5,
+  'D70S': 1.5,
   'D80': 1.5,
   'D90': 1.5,
   'D7000': 1.5,
@@ -40,24 +73,96 @@ const nikon = {
   'D5500': 1.5,
   'D5600': 1.5,
   'D50': 1.5,
-  'D40/40X': 1.5,
+  'D40': 1.5,
+  'D40X': 1.5,
   'D60': 1.5,
   'D3000': 1.5,
   'D3100': 1.5,
   'D3200': 1.5,
   'D3300': 1.5,
   'D3500': 1.5,
-  '1 J1/J2/J3/J4/J5': 2.7,
-  '1 V1/V2/V3': 2.7,
+  '1 J1': 2.7,
+  '1 J2': 2.7,
+  '1 J3': 2.7,
+  '1 J4': 2.7,
+  '1 J5': 2.7,
+  '1 V1': 2.7,
+  '1 V2': 2.7,
+  '1 V3': 2.7,
   '1 S1': 2.7,
   '1 AW1': 2.7,
   'Z 7': 1,
   'Z 6': 1
 };
 const sony = {
-
+  'a900': 1,
+  'a850': 1,
+  'a99': 1,
+  '99II': 1,
+  'a100': 1.5,
+  'a700': 1.5,
+  'a200': 1.5,
+  'a300': 1.5,
+  'a350': 1.5,
+  'a230': 1.5,
+  'a330': 1.5,
+  'a380': 1.5,
+  'a500': 1.5,
+  'a550': 1.5,
+  'a450': 1.5,
+  'a290': 1.5,
+  'a390': 1.5,
+  'a500': 1.5,
+  'a450': 1.5,
+  'a290': 1.5,
+  'a390': 1.5,
+  'a560': 1.5,
+  'a580': 1.5,
+  'a33': 1.5,
+  'a55': 1.5,
+  'a35': 1.5,
+  'a65': 1.5,
+  'a77': 1.5,
+  'a77II': 1.5,
+  'a57': 1.5,
+  'a37': 1.5,
+  'a58': 1.5,
+  'a68': 1.5,
+  'NEX-3': 1.5,
+  'NEX-3N': 1.5,
+  'NEX-5': 1.5,
+  'NEX-5N': 1.5,
+  'NEX-5R': 1.5,
+  'NEX-5T': 1.5,
+  'NEX-C3': 1.5,
+  'NEX-7': 1.5,
+  'NEX-F3': 1.5,
+  'NEX-5R': 1.5,
+  'NEX-6': 1.5,
+  'a3000': 1.5,
+  'a7': 1,
+  'a7II': 1,
+  'a7III': 1,
+  'a7II': 1,
+  'a7III': 1,
+  'a7R': 1,
+  'a7RII': 1,
+  'a7RIII': 1,
+  'a5000': 1.5,
+  'a6000': 1.5,
+  'a3500': 1.5,
+  'a5100': 1.5,
+  'a7S': 1,
+  'A7SII': 1,
+  'a6300': 1.5,
+  'a6500': 1.5,
+  'a9': 1,
+  'a6400': 1.5,
+  'QX1': 1.5
 };
-// const panasonic = {};
+const panasonic = {
+  
+};
 // const dji = {};
 // const leica = {};
 // const olympus = {};
@@ -71,10 +176,10 @@ const cameraBrand = {
   // dji,
   // fujifilm,
   // leica,
-  nikon
+  nikon,
   // olympus,
   // panasonic,
-  // sony
+  sony
 }
 
 const cameraBrands = document.getElementById("cameraBrands");
@@ -82,7 +187,7 @@ const cameraModel = document.getElementById("cameraModel");
 const lengthInput = document.getElementById("length");
 const yourCrop = document.querySelector("#yourCrop");
 const results = document.querySelector("#results");
-let fullNameCap;
+let fullNameCap = '';
 
 for (camera in cameraBrand){
   let opt = document.createElement('option');
@@ -137,7 +242,7 @@ cameraModel.addEventListener('change', () => {
 
 // By making this a function declaration, you can call it manually
 const displayResults = () => {
-  !(fullNameCap === "") && (lengthInput.value) ? 
+  !(fullNameCap === '') && lengthInput.value ? 
   results.textContent = `A ${lengthInput.value}mm lens is equivalent to a ${Math.round(lengthInput.value * cameraModel.value)}mm lens on the ${fullNameCap}`
   : 
   results.textContent = '';
