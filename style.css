@@ -6,8 +6,14 @@ body {
 
 h1 {
     font-family: "Oswald", sans-serif;
-    font-size: 7.9vmin;
+    font-size: 2.7vmin;
+    /* font-family: "Oswald", sans-serif;
+    font-size: 7.9vmin; */
 
+}
+p {
+    font-family: "Oswald", sans-serif;
+    font-size: 2.7vmin;
 }
 
 h3 {
@@ -31,10 +37,7 @@ h3 {
 
 
 
-p {
-    font-family: "Oswald", sans-serif;
-    font-size: 2.7vmin;
-}
+
 
 input {
     font-size: 15px;
