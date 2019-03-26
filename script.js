@@ -161,24 +161,124 @@ const sony = {
   'QX1': 1.5
 };
 const panasonic = {
+  'Lumix DMC-G1' : 2,
+  'Lumix DMC-G10' : 2,
+  'Lumix DMC-G3' : 2,
+  'Lumix DMC-G5' : 2,
+  'Lumix DMC-G6' : 2,
+  'Lumix DMC-G7' : 2,
+  'Lumix DMC-G9' : 2,
+  'Lumix DMC-G80' : 2,
+  'Lumix DMC-G85' : 2,
+  'Lumix DMC-GF1' : 2,
+  'Lumix DMC-GF2' : 2,
+  'Lumix DMC-GF3' : 2,
+  'Lumix DMC-GF5' : 2,
+  'Lumix DMC-GF6' : 2,
+  'Lumix DMC-GF7' : 2,
+  'Lumix DMC-G2' : 2,
+  'Lumix DMC-GH1' : 2,
+  'Lumix DMC-GH2' : 2,
+  'Lumix DMC-GX800' : 2,
+  'Lumix DMC-GX850' : 2,
+  'Lumix DMC-GH3' : 2,
+  'Lumix DMC-GH4' : 2,
+  'Lumix DMC-GH5' : 2,
+  'Lumix DMC-GH5S' : 2,
+  'Lumix DMC-GM1' : 2,
+  'Lumix DMC-GM5' : 2,
+  'Lumix DMC-GX1' : 2,
+  'Lumix DMC-GX7' : 2,
+  'Lumix DMC-GX8' : 2
+};
+const DJI = {
+  'ZENMUSE X5': 2,
+  'ZENMUSE X5R': 2,
+  'ZENMUSE X7': 1.5,
+
+};
+const leica = {
+  'M8': 1.3,
+  'M8.2': 1.3,
+  'M8': 1.3,
+  'M9': 1,
+  'M9-P': 1,
+  'M Monochrom': 1,
+  'M-E': 1,
+  'M': 1,
+  'M-P': 1.3,
+  'M10': 1,
+  'M10P': 1.3,
+  'SL': 1,
+  'T': 1.5,
+  'TL': 1.5,
+  'TL2': 1.5,
+  'CL': 1.5,
+  'S': 0.8,
+  'S1': 0.8,
+  'S2': 0.8
+  
+  
+  
+  
+  
+  
+  
   
 };
-// const dji = {};
-// const leica = {};
-// const olympus = {};
-// const fujifilm = {};
+const olympus = {
+'E-1': 2,
+'E-3': 2,
+'E-5': 2,
+'E-30': 2,
+'E-300': 2,
+'E-400': 2,
+'E-410': 2,
+'E-420': 2,
+'E-450': 2,
+'E-500': 2,
+'E-510': 2,
+'E-520': 2,
+'E-620': 2,
+'PEN E-P1': 2,
+'PEN E-P2': 2,
+'PEN E-P3': 2,
+'PEN E-P5': 2,
+'PEN E-PL1': 2,
+'PEN E-PL2': 2,
+'PEN E-PL3': 2,
+'PEN E-PL5': 2,
+'PEN E-PM1': 2,
+
+
+
+
+};
+const fujifilm = {
+  'X-T1': 1.5,
+  'X-T10': 1.5,
+  'X-T2': 1.5,
+  'X-T20': 1.5,
+  'X-T3': 1.5,
+  'X-T30': 1.5,
+  'X-Pro1': 1.5,
+  'X-Pro2': 1.5,
+  'X-E2S': 1.5,
+  'X-E3': 1.5,
+  'X-H1': 1.5
+};
 
 
 
 
 const cameraBrand = {
   canon,
-  // dji,
-  // fujifilm,
-  // leica,
+  DJI,
+  fujifilm,
+  leica,
   nikon,
-  // olympus,
-  // panasonic,
+  olympus,
+  panasonic,
   sony
 }
 
@@ -243,8 +343,9 @@ cameraModel.addEventListener('change', () => {
 // By making this a function declaration, you can call it manually
 const displayResults = () => {
   !(fullNameCap === '') && lengthInput.value ? 
-  results.textContent = `A ${lengthInput.value}mm lens is equivalent to a ${Math.round(lengthInput.value * cameraModel.value)}mm lens on the ${fullNameCap}`
-  : 
+  results.textContent = `A ${lengthInput.value}mm lens is equivalent to a 
+  ${Math.round((lengthInput.value * cameraModel.value) * 10) / 10}mm lens on the ${fullNameCap}`
+  :
   results.textContent = '';
 }
 lengthInput.addEventListener('input', displayResults);
