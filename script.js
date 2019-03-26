@@ -28,9 +28,6 @@ const canon = {
   'EOS M50': 1.6,
   'EOS R': 1,
   'EOS RP': 1  
-
-  
-
 };
 const nikon = {
   'D1': 1.5,
@@ -195,7 +192,6 @@ const DJI = {
   'ZENMUSE X5': 2,
   'ZENMUSE X5R': 2,
   'ZENMUSE X7': 1.5,
-
 };
 const leica = {
   'M8': 1.3,
@@ -217,14 +213,6 @@ const leica = {
   'S': 0.8,
   'S1': 0.8,
   'S2': 0.8
-  
-  
-  
-  
-  
-  
-  
-  
 };
 const olympus = {
 'E-1': 2,
@@ -249,10 +237,6 @@ const olympus = {
 'PEN E-PL3': 2,
 'PEN E-PL5': 2,
 'PEN E-PM1': 2,
-
-
-
-
 };
 const fujifilm = {
   'X-T1': 1.5,
@@ -267,9 +251,6 @@ const fujifilm = {
   'X-E3': 1.5,
   'X-H1': 1.5
 };
-
-
-
 
 const cameraBrand = {
   canon,
@@ -298,15 +279,13 @@ for (camera in cameraBrand){
   cameraBrands.appendChild(opt);
   }
 
-  const clearResults = () => {
-    results.textContent = '',
-    yourCrop.textContent = '',
-    lengthInput.value = '';
-   }
+const clearResults = () => {
+  results.textContent = '',
+  yourCrop.textContent = '',
+  lengthInput.value = '';
+  }
    
-   
-   
-   const crop = () => {
+const crop = () => {
      fullNameCap = `${cameraBrands.options[cameraBrands.selectedIndex].textContent.charAt(0).toUpperCase()}${cameraBrands.options[cameraBrands.selectedIndex].textContent.substring(1)} ${cameraModel.options[cameraModel.selectedIndex].textContent}`
     if (cameraModel.value == 1) {
       yourCrop.textContent = `The ${fullNameCap} has a full frame sensor, there is no crop`
@@ -324,7 +303,7 @@ cameraBrands.addEventListener('change', () => {
   let camObjects = cameraBrands.options[cameraBrands.selectedIndex].cam // grabbing the cameraBrand object value which is the object of camera modesl and crop factors
   Object.keys(camObjects).sort().map((cam) => {
   let models = {[cam]: camObjects[cam]} // sorts the camera model objects alphabetically
-for (camera in models){
+  for (camera in models){
     let opt2 = document.createElement('option');
     opt2.textContent = camera;
     opt2.value = models[camera]; // Get the value that goes with the key

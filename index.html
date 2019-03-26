@@ -9,23 +9,24 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Cardo|Oswald" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-     <h1>Crop Factor</h1>
-     <h3>Find out the crop factor on any camera selected and it's equivalent focal lengths. <br>
-         (Crop factor and lens focal lengths are measured against a full frame sensor.) 
-        <br>
-        
-    </h3>
-     <select id='cameraBrands' class='capital'>
-         <option>Choose Camera Brand</option>
-     </select>
-     <select id='cameraModel' class='cameraSelects'>
-     </select>
-     <p id='yourCrop'></p>
-        <input id="length" type="number" name="lens" placeholder="Enter lens focal length to calculate (EX: 24 for a 24mm lens)" /><br>
-        <p id='results'></p>
-        <script src="script.js" async defer></script>
+    <div class='container'>
+            <h1>Crop Factor</h1>
+            <h3>Find out the crop factor on any camera selected and it's equivalent focal lengths. <br>
+                (Crop factor and lens focal lengths are measured against a full frame sensor.) 
+            </h3>
+            <select id='cameraBrands' class='capital select-css offset'>
+             <option>Choose Camera Brand</option>
+            </select>
+            <select id='cameraModel' class='cameraSelects select-css offset'>
+            </select>
+            <p id='yourCrop'></p>
+            <input class ='offset' id="length" type="number" name="lens" placeholder="Enter focal length(EX: 24 for a 24mm lens)" />
+            <p id='results'></p>
+    </div>
+    <script src="script.js" async defer></script>
     </body>
 </html>
