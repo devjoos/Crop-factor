@@ -4,9 +4,10 @@ body {
     background-blend-mode: darken;
 }
 
-.mobile {
+h1 {
     font-family: "Oswald", sans-serif;
     font-size: 7.9vmin;
+    letter-spacing: -1px
 
 }
 
