@@ -322,7 +322,7 @@ cameraModel.addEventListener('change', () => {
 // By making this a function declaration, you can call it manually
 const displayResults = () => {
   !(fullNameCap === '') && lengthInput.value ? 
-  results.textContent = `A ${lengthInput.value}mm lens is equivalent to a 
+  results.textContent = `A ${lengthInput.value}mm lens renders at a 
   ${Math.round((lengthInput.value * cameraModel.value) * 10) / 10}mm lens on the ${fullNameCap}`
   :
   results.textContent = '';
